@@ -39,5 +39,16 @@ public class UserResource {
         return ResponseEntity.created(location).build();
     }
 
+    /*delete a particular user*/
+    @DeleteMapping(path = "/users/{id}")
+    public ResponseEntity<Object> deleteUser(@PathVariable int id) {
+        User user = userDaoService.deleteUser(id);
+        if (user == null) {
+            throw new UserNotFoundException("user does not exist : " + id);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
+    }
+
 
 }
