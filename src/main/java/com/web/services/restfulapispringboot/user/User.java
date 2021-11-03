@@ -1,11 +1,17 @@
 package com.web.services.restfulapispringboot.user;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
 
     private Integer id;
+
+    @Size(min = 2, message = "name should be min 2 char")
     private String name;
+
+    @Past(message = "birth date must be in past")
     private Date dob;
 
     public User(Integer id, String name, Date dob) {

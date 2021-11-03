@@ -43,6 +43,7 @@ public class UserDaoService {
         return null;
     }
 
+    /*delete a user*/
     public User deleteUser(int id) {
         Iterator<User> iterator = users.iterator();
         while (iterator.hasNext()) {
