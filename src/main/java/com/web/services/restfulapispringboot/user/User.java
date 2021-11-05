@@ -3,13 +3,19 @@ package com.web.services.restfulapispringboot.user;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
 @ApiModel(description = "all details about the user")
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Integer id;
 
     @Size(min = 2, message = "name should be min 2 char")
@@ -19,6 +25,10 @@ public class User {
     @Past(message = "birth date must be in past")
     @ApiModelProperty(notes = "birth date must be in past")
     private Date dob;
+
+    public User() {
+
+    }
 
     public User(Integer id, String name, Date dob) {
         this.id = id;
