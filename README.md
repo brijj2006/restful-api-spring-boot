@@ -13,3 +13,9 @@ Users -> Posts
 - Create a post for a user      - POST /users/{id}/posts
 - Retrieve details of a post    - GET /users/{id}/posts/{post_id}
 
+Swagger API Docs : 
+
+http://localhost:8080/v2/api-docs
+
+http://localhost:8080/swagger-ui.html
+
